@@ -1,8 +1,12 @@
+import MineSweeper from '../../domain/mineSweeper'
 
-const MainField = async (req, res, next) => {
+
+const MineField = async (req, res, next) => {
+    const gameBoard = MineSweeper()
+
     res.status(200).json({
-        data: 'carga minefield'
+        data: gameBoard
     })
 }
 
-export default Mainfield
+export default MineField

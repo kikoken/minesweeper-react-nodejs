@@ -11,12 +11,12 @@ const minefield = [
 
 const Minesweeper = (minefield) => () => {
     const minefield_length = minefield.length
-    const neighbors = new Neighbors(minefield)
+    const neighbors = Neighbors(minefield)
     
     for (let row = 0; row < minefield_length; row++) {
         let line = ''
         for (let col = 0; col < minefield[row].length; col++) {
-            if (neighbors(minefield,row,col) === 1) {
+            if (neighbors(row,col) === 1) {
                 line += '*'
             } else {
                 let bombs = 0

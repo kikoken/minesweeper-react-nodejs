@@ -4,7 +4,7 @@ import cors from 'cors'
 import { json } from 'body-parser'
 
 
-import routes from '../routes'
+import routes from '../routes/v1'
 
 const start = async (options) => {
     const app = express()
