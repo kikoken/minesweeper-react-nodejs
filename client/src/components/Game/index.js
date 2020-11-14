@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 
-import api from '../api'
-import Header from './Header'
+import api from '../../api'
+import Header from '../Header'
+import Block from './Block'
 
 import './game.css'
 
@@ -30,7 +31,7 @@ const Game = () => {
                         <p className="bombs">{bombs}</p>
                     </header>
                     <div className="grid">
-                        {board.map(item => (<div className="block">{item}</div>))}
+                        {board.map((item, index) => (<Block content={item} key={index}/>))}
                     </div>
                 </div>
             </section>           
