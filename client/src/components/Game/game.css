@@ -7,7 +7,6 @@
   }
   
   .grid > div {
-    background: lightblue;
     display: flex;
     height: 40px;
     width: 40px;
@@ -18,5 +17,13 @@
  
   .grid-header { 
       width: 400px;
+  }
+
+  .bomb { 
+    background: orange
+  }
+
+  .checked {
+    background: red;
   }
 
