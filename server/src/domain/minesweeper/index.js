@@ -1,14 +1,7 @@
 import Neighbors from './neighbors'
 import mineField from './minefield'
 
-/* const minefield = [
-    ['*','*','',''],
-    ['*','*','',''],
-    ['','','*',''],
-    ['','','','']
-] */
-
-const _minefield = mineField()
+const _minefield = mineField(10)
 
 
 
@@ -43,7 +36,7 @@ const Minesweeper = (minefield) => () => {
         result.push(line.split(''))
     }
 
-    return result
+    return result.flat()
 }
 
 export default Minesweeper(_minefield)

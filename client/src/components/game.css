@@ -1,0 +1,21 @@
+.grid {
+    height: 400px;
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    background: grey;
+  }
+  
+  .grid > div {
+    background: lightblue;
+    display: flex;
+    height: 40px;
+    width: 40px;
+    align-items: center;
+    justify-content: center;
+  }
+ 
+  .grid-header { 
+      width: 400px;
+  }
+

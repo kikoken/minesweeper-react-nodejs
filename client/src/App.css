@@ -21,15 +21,10 @@
   height: 100%;
 }
 
-.grid {
-  height: 400px;
+.Game-layout {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100px 400px;
   width: 400px;
-  display: flex;
-  flex-wrap: wrap;
-  background: grey;
-}
-
-.grid div { 
-  height: 40px;
-  width: 40px;
+  height: 500px;
 }
