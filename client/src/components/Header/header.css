@@ -1,0 +1,25 @@
+.Header {
+    background: lightgray;
+    display: grid;
+    grid-template-columns: 200px auto 150px;
+    height: 100%;;
+}
+
+.Header h1 { 
+    margin: 0;
+}
+
+.Header > div,
+.Header nav {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.Header nav {
+    justify-items: end;
+}
+
+.Header input {
+    margin-left: 1em;
+}
