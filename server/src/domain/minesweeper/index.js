@@ -1,17 +1,21 @@
 import Neighbors from './neighbors'
+import mineField from './minefield'
 
-const minefield = [
+/* const minefield = [
     ['*','*','',''],
     ['*','*','',''],
     ['','','*',''],
     ['','','','']
-]
+] */
+
+const _minefield = mineField()
 
 
 
 const Minesweeper = (minefield) => () => {
     const minefield_length = minefield.length
     const neighbors = Neighbors(minefield)
+    const result = []
     
     for (let row = 0; row < minefield_length; row++) {
         let line = ''
@@ -36,8 +40,10 @@ const Minesweeper = (minefield) => () => {
                 line += bombs
             }
         }
-        console.log(line)
+        result.push(line.split(''))
     }
+
+    return result
 }
 
-export default Minesweeper(minefield)
+export default Minesweeper(_minefield)
