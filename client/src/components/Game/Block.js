@@ -1,25 +1,38 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
-const Block = ({content}) => {
-    const [item, setItem] = useState('0')
-    const [pointer, setPointer] = useState('')
-    
+import bomb from '../../assets/bomb.svg.png'
+
+const Block = (props) => {
+    const { 
+        content,
+        id,
+        isGameOver, 
+        isReveled, 
+        onGameOver,
+        onRevealBlock
+    } = props
+
+    const [item, setItem] = useState('')
+    const [checked, setChecked] = useState(false)
+
     useEffect(() => {
-        setItem(content)
-    }, [item, content])
+        if (isReveled) setChecked(true)
+    }, [isReveled])
 
     const onClickHandler = (e) => {
-        if(item === '*') {
-            console.log('Game Over!')
+        if(content === '*') {
+            onGameOver()
         } else {
-            console.log(item)
-            setPointer('checked')
+            if(content !== '0') setItem(content)
+
+            setChecked(true)
+            onRevealBlock(id)
         }
     }
 
-    return (
-        <div className={`block ${pointer}`} onClick={onClickHandler}>{item}</div>
-    )
+    if(content === '*') return <div className={`bomb ${isGameOver ? 'over' : null}`} onClick={onClickHandler}>{isGameOver && <img src={bomb} alt='bomb'/>}</div>
+
+    return <div className={`block ${ checked ? 'checked' : null} ${isGameOver ? 'over' : null}`} onClick={onClickHandler}>{item}</div>
 }
 
 export default Block

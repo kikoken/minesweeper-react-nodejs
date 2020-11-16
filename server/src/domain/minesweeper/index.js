@@ -1,11 +1,11 @@
 import Neighbors from './neighbors'
 import mineField from './minefield'
 
-const _minefield = mineField(10)
 
 
 
-const Minesweeper = (minefield) => () => {
+const Minesweeper = () => {
+    const minefield = mineField(10)
     const minefield_length = minefield.length
     const neighbors = Neighbors(minefield)
     const result = []
@@ -39,4 +39,4 @@ const Minesweeper = (minefield) => () => {
     return result.flat()
 }
 
-export default Minesweeper(_minefield)
+export default Minesweeper

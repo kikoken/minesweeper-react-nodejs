@@ -8,6 +8,7 @@
   
   .grid > div {
     display: flex;
+    cursor: pointer;
     height: 40px;
     width: 40px;
     align-items: center;
@@ -23,7 +24,18 @@
     background: orange
   }
 
+  .bomb.over {
+    background: blue;
+  }
+
   .checked {
     background: red;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .over {
+    cursor: default;
+    pointer-events: none;
   }
 

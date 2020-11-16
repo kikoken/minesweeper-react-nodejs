@@ -1,5 +1,5 @@
 const MineField = (width = 5) => {
-    let bombAmount = 5
+    let bombAmount = 20
 
     const bombsArray = Array(bombAmount).fill('*')
     const emptyArray = Array(width**2 - bombAmount).fill('')
